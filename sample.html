@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CountDown.js sample</title>
+<script src="countdown.js"></script>
+<style>
+/* timer
+------------------------- */
+.timer .h:after,
+.timer .m:after{
+    content: ":";
+}
+.timer.string .h:after{
+    content: "時";
+}
+.timer.string .m:after{
+    content: "分";
+}
+.timer.string .s:after{
+    content: "秒";
+}
+
+/* imgTimer
+------------------------- */
+.imgTimer .h:after,
+.imgTimer .m:after,
+.imgTimer .num{
+    display: inline-block;
+    width: 13px;
+    height: 18px;
+    -webkit-background-size: 13px 18px;
+    background-size: 13px 18px;
+}
+.imgTimer .h:after,
+.imgTimer .m:after{
+    content: "";
+    background-image: url(./img/num_colon.png);
+}
+.imgTimer .num[title="0"]{background-image: url(./img/num_00.png);}
+.imgTimer .num[title="1"]{background-image: url(./img/num_01.png);}
+.imgTimer .num[title="2"]{background-image: url(./img/num_02.png);}
+.imgTimer .num[title="3"]{background-image: url(./img/num_03.png);}
+.imgTimer .num[title="4"]{background-image: url(./img/num_04.png);}
+.imgTimer .num[title="5"]{background-image: url(./img/num_05.png);}
+.imgTimer .num[title="6"]{background-image: url(./img/num_06.png);}
+.imgTimer .num[title="7"]{background-image: url(./img/num_07.png);}
+.imgTimer .num[title="8"]{background-image: url(./img/num_08.png);}
+.imgTimer .num[title="9"]{background-image: url(./img/num_09.png);}
+</style>
+</head>
+<body>
+
+<p id="js_countdown1" class="timer string"></p>
+<script>
+var countDown1 = new ui.CountDown({
+    timeElm: js_countdown1,
+    startTime: new Date('2013/09/04 13:00:00'),
+    endTime: new Date('2013/09/04 13:00:30'),
+    hmsType: {h:false, m:true, s:true}
+});
+</script>
+
+<p id="js_countdown2" class="timer"></p>
+<script>
+var countDown1 = new ui.CountDown({
+    timeElm: js_countdown2,
+    startTime: new Date('2013/09/04 13:00:00'),
+    endTime: new Date('2013/09/04 13:00:30'),
+    hmsType: {h:false, m:true, s:true}
+});
+</script>
+
+<p id="js_countdown3" class="imgTimer"></p>
+<script>
+var countDown2 = new ui.CountDown({
+    timeElm: js_countdown3,
+    startTime: new Date('2013/09/04 13:00:00'),
+    endTime: new Date('2013/09/04 13:00:02'),
+    cssControl: true,
+    hmsType: {h:false, m:true, s:true}
+});
+</script>
+
+</body>
+</html>
